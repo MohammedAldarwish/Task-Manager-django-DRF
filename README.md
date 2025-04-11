@@ -20,7 +20,38 @@ A simple backend API built with Django and Django REST Framework (DRF) to manage
 
 ## Installation
 
-1. **Clone the repo**  
-```bash
+1. **Clone the repo**
+```bash  
 git clone https://github.com/your-username/team-task-manager.git](https://github.com/MohammedAldarwish/Task-Manager-django-DRF.git
 cd team-task-manager
+````
+
+2. **Activation Virtual env**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+````
+3. **Install project dependencies**
+```bash
+pip install -r requirements.txt
+````
+4. **Apply database migrations**
+```bash
+python manage.py migrate
+````
+5. **Run the development server**
+```bash
+python manage.py runserver
+````
+
+## API Endpoints
+
+| Method | Endpoint            | Description               |
+|--------|---------------------|---------------------------|
+| POST   | /accounts/login/    | Login and get JWT tokens  |
+| POST   | /accounts/register/ | Register new user         |
+| GET    | /tasks/             | List user tasks (auth)    |
+| POST   | /tasks/             | Create a new task (auth)  |
+| PUT    | /tasks/{id}/        | Update task (auth)        |
+| DELETE | /tasks/{id}/        | Delete task (auth)        |
+
